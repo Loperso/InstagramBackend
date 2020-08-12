@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace InstagramBackend.Models
 {
     public class ProfileEntity
     {
-
+        [Key]
         public string ProfileId { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Username { get; set; }
 
         public string Description { get; set; }
 
-        public string ProfilePhoto { get; set; }
+        public string UrlProfilePhoto { get; set; }
 
         public string UserId { get; set; }
 
@@ -46,6 +49,10 @@ namespace InstagramBackend.Models
         public ICollection<SubCommentEntity> SubComments { get; set; }
 
         public ICollection<LikeSubCommentEntity> LikeSubComments { get; set; }
+
+        public ICollection<TaggedCommentEntity> taggedComments { get; set; }
+
+        public ICollection<TaggedSubCommentEntity> taggedSubComments { get; set; }
 
     }
 }

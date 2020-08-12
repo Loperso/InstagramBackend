@@ -9,9 +9,10 @@ namespace InstagramBackend.Models
 {
     public class FollowProfileEntity
     {
-
+        [Key]
         public string FollowProfileId { get; set; }
 
+        [Required]
         public DateTime FollowDate { get; set; }
 
         public string FollowerId { get; set; }

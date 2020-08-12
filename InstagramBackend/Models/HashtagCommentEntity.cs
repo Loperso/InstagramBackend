@@ -6,21 +6,18 @@ using System.Threading.Tasks;
 
 namespace InstagramBackend.Models
 {
-    public class LikeCommentEntity
+    public class HashtagCommentEntity
     {
         [Key]
-        public string LikeCommentId { get; set; }
+        public string HashtagCommentId { get; set; }
 
-        [Required]
-        public DateTime LikeCommentDate { get; set; }
+        public string HashtagId { get; set; }
+
+        public HashtagEntity Hashtag { get; set; }
 
         public string CommentId { get; set; }
 
         public CommentEntity Comment { get; set; }
-
-        public string ProfileId { get; set; }
-
-        public ProfileEntity Profile { get; set; }
 
     }
 }
