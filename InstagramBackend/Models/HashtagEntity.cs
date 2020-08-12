@@ -14,15 +14,15 @@ namespace InstagramBackend.Models
         [Required]
         public string HashtagTitle { get; set; }
 
-        public ICollection<HashtagStoryEntity> HashtagStories { get; set; }
+        public ICollection<HashtagStoryEntity> StoriesWithHashtag { get; set; }
 
-        public ICollection<HashtagPostEntity> HashtagPosts { get; set; }
+        public ICollection<HashtagPostEntity> PostsWithHashtag { get; set; }
 
         public ICollection<FollowHashtagEntity> HashtagFollowers { get; set; }
 
-        public ICollection<HashtagCommentEntity> HashtagComments { get; set; }
+        public ICollection<HashtagCommentEntity> CommentsWithHashtag { get; set; }
 
-        public ICollection<HashtagSubComment> HashtagSubComments { get; set; }
+        public ICollection<HashtagSubCommentEntity> SubCommentsWithHashtag { get; set; }
 
     }
 }

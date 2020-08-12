@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace InstagramBackend.Models
@@ -22,6 +23,8 @@ namespace InstagramBackend.Models
 
         public string UserId { get; set; }
 
+        [ForeignKey("UserId")]
+        [InverseProperty("Profile")]
         public UserEntity User { get; set; }
 
         public ICollection<PostEntity> Posts{ get; set; }
@@ -44,11 +47,11 @@ namespace InstagramBackend.Models
 
         public ICollection<CommentEntity> Comments { get; set; }
 
-        public ICollection<LikeCommentEntity> LikeComments { get; set; }
+        public ICollection<LikeCommentEntity> LikedComments { get; set; }
 
-        public ICollection<SubCommentEntity> SubComments { get; set; }
+        public ICollection<SubCommentEntity> SubCommentsByProfile { get; set; }
 
-        public ICollection<LikeSubCommentEntity> LikeSubComments { get; set; }
+        public ICollection<LikeSubCommentEntity> LikedSubComments { get; set; }
 
         public ICollection<TaggedCommentEntity> taggedComments { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,11 +17,15 @@ namespace InstagramBackend.Models
 
         public string SubCommentId { get; set; }
 
+        [ForeignKey("SubCommentsId")]
+        [InverseProperty("Likes")]
         public SubCommentEntity SubComment { get; set; }
 
         public string ProfileId { get; set; }
 
-        public ProfileEntity Profile { get; set; }
+        [ForeignKey("ProfileId")]
+        [InverseProperty("PostsSaved")]
+        public ProfileEntity LikedSubComments { get; set; }
 
     }
 }

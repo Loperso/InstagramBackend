@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,11 +14,15 @@ namespace InstagramBackend.Models
 
         public string HashtagId { get; set; }
 
+        [ForeignKey("HashtagId")]
+        [InverseProperty("HashtagFollowers")]
         public HashtagEntity Hashtag { get; set; }
 
         public string ProfileId { get; set; }
 
-        public ProfileEntity Profile { get; set; }
+        [ForeignKey("ProfileId")]
+        [InverseProperty("FollowHashtags")]
+        public ProfileEntity FollowHashtagProfile { get; set; }
 
     }
 }

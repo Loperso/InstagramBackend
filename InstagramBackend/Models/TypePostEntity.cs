@@ -14,6 +14,6 @@ namespace InstagramBackend.Models
         [Required]
         public string Name { get; set; }
 
-        public ICollection<PostEntity> Post { get; set; }
+        public ICollection<PostEntity> Posts { get; set; }
     }
 }
