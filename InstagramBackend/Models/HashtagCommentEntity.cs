@@ -21,7 +21,7 @@ namespace InstagramBackend.Models
         public string CommentId { get; set; }
 
         [ForeignKey("CommentId")]
-        [InverseProperty("HashtagsInComment")]
+        [InverseProperty("HashtagsInComments")]
         public CommentEntity Comment { get; set; }
 
     }

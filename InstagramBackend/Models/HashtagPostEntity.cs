@@ -15,7 +15,7 @@ namespace InstagramBackend.Models
         public string HashtagId { get; set; }
 
         [ForeignKey("HashtagId")]
-        [InverseProperty("PostsWithHashtags")]
+        [InverseProperty("PostsWithHashtag")]
         public HashtagEntity Hashtag { get; set; }
 
         public string PostId { get; set; }

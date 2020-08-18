@@ -53,9 +53,9 @@ namespace InstagramBackend.Models
 
         public ICollection<LikeSubCommentEntity> LikedSubComments { get; set; }
 
-        public ICollection<TaggedCommentEntity> taggedComments { get; set; }
+        public ICollection<TaggedCommentEntity> TaggedComments { get; set; }
 
-        public ICollection<TaggedSubCommentEntity> taggedSubComments { get; set; }
+        public ICollection<TaggedSubCommentEntity> TaggedSubComments { get; set; }
 
     }
 }

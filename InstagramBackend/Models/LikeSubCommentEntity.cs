@@ -17,15 +17,15 @@ namespace InstagramBackend.Models
 
         public string SubCommentId { get; set; }
 
-        [ForeignKey("SubCommentsId")]
+        [ForeignKey("SubCommentId")]
         [InverseProperty("Likes")]
         public SubCommentEntity SubComment { get; set; }
 
         public string ProfileId { get; set; }
 
         [ForeignKey("ProfileId")]
-        [InverseProperty("PostsSaved")]
-        public ProfileEntity LikedSubComments { get; set; }
+        [InverseProperty("LikedSubComments")]
+        public ProfileEntity ProfileLiked { get; set; }
 
     }
 }

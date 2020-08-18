@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace InstagramBackend.Models
 {
     public class TaggedSubCommentEntity
     {
-
+        [Key]
         public string TaggedSubCommentId { get; set; }
 
         public string SubCommentId { get; set; }
@@ -20,7 +21,7 @@ namespace InstagramBackend.Models
         public string ProfileTaggedId { get; set; }
 
         [ForeignKey("ProfileTaggedId")]
-        [InverseProperty("TaggedComments")]
+        [InverseProperty("TaggedSubComments")]
         public ProfileEntity ProfileTagged { get; set; }
 
     }
